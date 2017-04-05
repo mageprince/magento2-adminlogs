@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Prince::top_level" module="Prince_Adminlogs" resource="Magento_Backend::content" sortOrder="20" title="Prince"/>
+		<add action="prince_adminlogs/adminlogs/index" id="Prince::prince_adminlogs" module="Prince_Adminlogs" parent="Prince::top_level" resource="Magento_Backend::content" sortOrder="9999" title="Admin Logs"/>
+	</menu>
+</config>

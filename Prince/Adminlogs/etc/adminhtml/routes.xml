@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+	<router id="admin">
+		<route frontName="prince_adminlogs" id="prince_adminlogs">
+			<module before="Magento_Backend" name="Prince_Adminlogs"/>
+		</route>
+		<route frontName="adminlogs" id="adminlogs">
+			<module before="Magento_Backend" name="Prince_Adminlogs"/>
+		</route>
+	</router>
+</config>

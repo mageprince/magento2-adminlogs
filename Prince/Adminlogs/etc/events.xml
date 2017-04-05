@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="backend_auth_user_login_success">
+        <observer name="admin_loginsuccess" instance="Prince\Adminlogs\Model\Observer\Adminlogin"/>
+    </event>
+    <event name="backend_auth_user_login_failed">
+        <observer name="admin_loginfail" instance="Prince\Adminlogs\Model\Observer\Adminloginfail"/>
+    </event>
+</config>
