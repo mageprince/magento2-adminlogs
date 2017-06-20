@@ -5,7 +5,6 @@ This module is used to track admin login history with Date,Username,Ipaddress an
 
 # Installation Instruction
 
-
 * Copy the content of the repo to the Magento 2 root folder
 * Run command:
 <b>php bin/magento setup:upgrade</b>
