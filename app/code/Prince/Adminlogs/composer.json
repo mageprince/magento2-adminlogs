@@ -1,11 +1,13 @@
 {
     "name": "prince/module-adminlogs",
-    "description": "",
+    "description": "Magento 2 AdminLog extension",
     "license": "proprietary",
+    "type": "magento2-module",
+    "version": "0.1.0",
     "authors": [
         {
-            "email": "info@freemagento.com",
-            "name": "Free Magento"
+            "email": "7pprince@gmail.com",
+            "name": "MagePrince"
         }
     ],
     "minimum-stability": "dev",
