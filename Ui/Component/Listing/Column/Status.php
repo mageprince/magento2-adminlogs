@@ -52,6 +52,9 @@ class Status extends Column
      */
     protected $systemStore;
 
+    /**
+     * @var \Magento\Catalog\Model\ProductFactory
+     */
     protected $productFactory;
 
     /**
@@ -87,10 +90,10 @@ class Status extends Column
     {
         if (isset($dataSource['data']['items'])){
             foreach ($dataSource['data']['items'] as & $item) {
-                if($item['status']){
-                   $item['status'] = "Success";
-                }else{
-                   $item['status'] = "Fail";
+                if($item['status']) {
+                   $item['status'] = "<div style='color: green'>Success</div>";
+                } else {
+                   $item['status'] = "<div style='color: red'>Fail</div>";
                 }
             }
         }

@@ -47,7 +47,6 @@ class InstallSchema implements InstallSchemaInterface
 
         $table_prince_adminlogs = $setup->getConnection()->newTable($setup->getTable('prince_adminlogs'));
 
-        
         $table_prince_adminlogs->addColumn(
             'adminlogs_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -55,9 +54,7 @@ class InstallSchema implements InstallSchemaInterface
             array('identity' => true,'nullable' => false,'primary' => true,'unsigned' => true,),
             'Entity ID'
         );
-        
 
-        
         $table_prince_adminlogs->addColumn(
             'username',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
@@ -65,9 +62,7 @@ class InstallSchema implements InstallSchemaInterface
             [],
             'username'
         );
-        
 
-        
         $table_prince_adminlogs->addColumn(
             'ipaddress',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
@@ -76,8 +71,6 @@ class InstallSchema implements InstallSchemaInterface
             'ipaddress'
         );
         
-
-        
         $table_prince_adminlogs->addColumn(
             'status',
             \Magento\Framework\DB\Ddl\Table::TYPE_BOOLEAN,
@@ -85,9 +78,7 @@ class InstallSchema implements InstallSchemaInterface
             [],
             'status'
         );
-        
 
-        
         $table_prince_adminlogs->addColumn(
             'date',
             \Magento\Framework\DB\Ddl\Table::TYPE_DATETIME,
@@ -95,10 +86,8 @@ class InstallSchema implements InstallSchemaInterface
             [],
             'date'
         );
-        
 
         $setup->getConnection()->createTable($table_prince_adminlogs);
-
         $setup->endSetup();
     }
 }

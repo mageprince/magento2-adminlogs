@@ -30,14 +30,20 @@ namespace Prince\Adminlogs\Helper;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-
+    /**
+     * @var \Magento\Backend\Model\Auth\Session
+     */
     protected $_authSession;
 
-    public function __construct(
+    /**
+     * Data constructor.
+     * @param \Magento\Framework\App\Helper\Context $context
+     * @param \Magento\Backend\Model\Auth\Session $authSession
+     */
+    public function __construct (
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Backend\Model\Auth\Session $authSession
-    )
-    {
+    ) {
         $this->_authSession = $authSession;
         parent::__construct($context);
     }
@@ -45,6 +51,5 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getUser()
     {
         return $this->_authSession->getUser();
-
     }
 }

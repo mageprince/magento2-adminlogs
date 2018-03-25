@@ -33,20 +33,25 @@ use Magento\Framework\Event\ObserverInterface;
  
 class Adminloginfail implements ObserverInterface
 {
-    
-    protected $_authSession;
-
+    /**
+     * @var \Prince\Adminlogs\Model\AdminlogsFactory
+     */
     protected $_adminLogsModel;
 
+    /**
+     * @var \Magento\Framework\HTTP\PhpEnvironment\RemoteAddress
+     */
     protected $_ipAddress;
 
+    /**
+     * Adminloginfail constructor.
+     * @param \Prince\Adminlogs\Model\AdminlogsFactory $adminLogsModel
+     * @param \Magento\Framework\HTTP\PhpEnvironment\RemoteAddress $ipAddress
+     */
     public function __construct(
-        //\Magento\Backend\Model\Auth\Session $authSession,
         \Prince\Adminlogs\Model\AdminlogsFactory $adminLogsModel,
         \Magento\Framework\HTTP\PhpEnvironment\RemoteAddress $ipAddress
-    )
-    {
-        //$this->_authSession = $authSession;
+    ) {
         $this->_adminLogsModel = $adminLogsModel;
         $this->_ipAddress = $ipAddress;
     }
@@ -55,13 +60,10 @@ class Adminloginfail implements ObserverInterface
     {   
         $ipAddress = $this->_ipAddress->getRemoteAddress();
         $model = $this->_adminLogsModel->create();
-
         $model->setUsername($observer->getUserName());
         $model->setIpaddress($ipAddress);
         $model->setStatus(0);
         $model->setDate(date('Y-m-d H:i:s'));
         $model->save();
-
     }
- 
 }

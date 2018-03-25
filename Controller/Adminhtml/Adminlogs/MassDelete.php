@@ -28,37 +28,48 @@
 
 namespace Prince\Adminlogs\Controller\Adminhtml\Adminlogs;
 
-class MassDelete extends \Magento\Backend\App\Action {
-
+class MassDelete extends \Magento\Backend\App\Action
+{
+    /**
+     * @var \Magento\Ui\Component\MassAction\Filter
+     */
     protected $_filter;
 
+    /**
+     * @var \Prince\Adminlogs\Model\ResourceModel\Adminlogs\CollectionFactory
+     */
     protected $_collectionFactory;
-    
+
+    /**
+     * MassDelete constructor.
+     * @param \Magento\Ui\Component\MassAction\Filter $filter
+     * @param \Prince\Adminlogs\Model\ResourceModel\Adminlogs\CollectionFactory $collectionFactory
+     * @param \Magento\Backend\App\Action\Context $context
+     */
     public function __construct(
         \Magento\Ui\Component\MassAction\Filter $filter,
         \Prince\Adminlogs\Model\ResourceModel\Adminlogs\CollectionFactory $collectionFactory,
         \Magento\Backend\App\Action\Context $context
-        ) {
-        $this->_filter            = $filter;
+    ) {
+        $this->_filter = $filter;
         $this->_collectionFactory = $collectionFactory;
         parent::__construct($context);
     }
 
-    public function execute() {
-        try{ 
-
-            //  print_r($this->_collectionFactory->create()->getData()); exit;
+    public function execute()
+    {
+        try {
             $logCollection = $this->_filter->getCollection($this->_collectionFactory->create());
-
             $itemsDeleted = 0;
             foreach ($logCollection as $item) {
                 $item->delete();
                 $itemsDeleted++;
             }
             $this->messageManager->addSuccess(__('A total of %1 Log(s) were deleted.', $itemsDeleted));
-        }catch(Exception $e){
+        } catch(Exception $e) {
             $this->messageManager->addError($e->getMessage());
         }
+
         $resultRedirect = $this->resultRedirectFactory->create();
         return $resultRedirect->setPath('prince_adminlogs/adminlogs');
     }

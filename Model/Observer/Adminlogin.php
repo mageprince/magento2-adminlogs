@@ -33,37 +33,46 @@ use Magento\Framework\Event\ObserverInterface;
  
 class Adminlogin implements ObserverInterface
 {
-    
+    /**
+     * @var \Magento\Backend\Model\Auth\Session
+     */
     protected $_authSession;
 
+    /**
+     * @var \Prince\Adminlogs\Model\AdminlogsFactory
+     */
     protected $_adminLogsModel;
 
+    /**
+     * @var \Magento\Framework\HTTP\PhpEnvironment\RemoteAddress
+     */
     protected $_ipAddress;
 
+    /**
+     * Adminlogin constructor.
+     * @param \Magento\Backend\Model\Auth\Session $authSession
+     * @param \Prince\Adminlogs\Model\AdminlogsFactory $adminLogsModel
+     * @param \Magento\Framework\HTTP\PhpEnvironment\RemoteAddress $ipAddress
+     */
     public function __construct(
         \Magento\Backend\Model\Auth\Session $authSession,
         \Prince\Adminlogs\Model\AdminlogsFactory $adminLogsModel,
         \Magento\Framework\HTTP\PhpEnvironment\RemoteAddress $ipAddress
-    )
-    {
+    ) {
         $this->_authSession = $authSession;
         $this->_adminLogsModel = $adminLogsModel;
         $this->_ipAddress = $ipAddress;
     }
 
     public function execute(Observer $observer)
-    {   
-
+    {
         $user = $this->_authSession->getUser();
         $ipAddress = $this->_ipAddress->getRemoteAddress();
         $model = $this->_adminLogsModel->create();
-
         $model->setUsername($user->getUsername());
         $model->setIpaddress($ipAddress);
         $model->setStatus(1);
         $model->setDate(date('Y-m-d H:i:s'));
         $model->save();
-
     }
- 
 }

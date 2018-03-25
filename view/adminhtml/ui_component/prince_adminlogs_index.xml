@@ -31,7 +31,7 @@
 	<listingToolbar name="listing_top">
 		<argument name="data" xsi:type="array">
 			<item name="config" xsi:type="array">
-				<item name="sticky" xsi:type="boolean">true</item>
+				<item name="sticky" xsi:type="boolean">false</item>
 			</item>
 		</argument>
 		<massaction name="listing_massaction">
@@ -97,6 +97,7 @@
 		<column name="status" class="Prince\Adminlogs\Ui\Component\Listing\Column\Status">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
+					<item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
 					<item name="filter" xsi:type="string">text</item>
 					<item name="label" translate="true" xsi:type="string">Status</item>
 				</item>
