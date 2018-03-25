@@ -2,6 +2,8 @@
 
 This module is used to track admin login history with Date,Username,Ipaddress and status.
 
+You can access adminlogs from **REPORTS->MagePrince->AdminLogs**
+
 # Installation Instruction
 
 - Copy the content of the repo to the <b>app/code/Prince/Adminlogs</b>
