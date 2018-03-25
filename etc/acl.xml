@@ -3,12 +3,8 @@
 	<acl>
 		<resources>
 			<resource id="Magento_Backend::admin">
-				<resource id="Magento_Backend::stores">
-					<resource id="Magento_Backend::stores_settings">
-						<resource id="Magento_Config::config">
-							<resource id="Prince_Adminlogs::adminlogs" title="Mageprince Adminlogs"/>
-						</resource>
-					</resource>
+				<resource id="Magento_Reports::report">
+					<resource id="Prince_Adminlogs::adminlogs" title="MagePrince AdminLogs" translate="title" sortOrder="10" />
 				</resource>
 			</resource>
 		</resources>
