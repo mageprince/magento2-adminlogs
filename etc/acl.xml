@@ -3,11 +3,12 @@
 	<acl>
 		<resources>
 			<resource id="Magento_Backend::admin">
-				<resource id="Prince_Adminlogs::adminlogs" sortOrder="10" title="adminlogs">
-					<resource id="Prince_Adminlogs::adminlogs_save" sortOrder="10" title="Save adminlogs"/>
-					<resource id="Prince_Adminlogs::adminlogs_delete" sortOrder="20" title="Delete adminlogs"/>
-					<resource id="Prince_Adminlogs::adminlogs_update" sortOrder="30" title="Update adminlogs"/>
-					<resource id="Prince_Adminlogs::adminlogs_view" sortOrder="40" title="View adminlogs"/>
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="Prince_Adminlogs::adminlogs" title="Mageprince Adminlogs"/>
+						</resource>
+					</resource>
 				</resource>
 			</resource>
 		</resources>
