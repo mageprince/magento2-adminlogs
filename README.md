@@ -4,7 +4,7 @@ This module is used to track admin login history with Date,Username,Ipaddress an
 
 # Installation Instruction
 
-- Copy the content of the repo to the <b>app/code/Prince/Productattach</b>
+- Copy the content of the repo to the <b>app/code/Prince/Adminlogs</b>
 - Run command: <b>php bin/magento setup:upgrade</b>
 - Run command: <b>php bin/magento setup:static-content:deploy</b>
 - Now flush cache: <b>php bin/magento cache:flush</b>
