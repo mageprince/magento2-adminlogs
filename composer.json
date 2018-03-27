@@ -1,17 +1,22 @@
 {
     "name": "prince/module-adminlogs",
-    "description": "Magento 2 AdminLog extension",
-    "license": "proprietary",
+    "description": "Magento2 Admin Logs",
+    "require": {
+        "magento/module-store": ">100.0",
+        "magento/module-backend": ">100.0",
+        "magento/framework": ">100.0"
+    },
     "type": "magento2-module",
-    "version": "0.1.0",
+    "version": "1.0.0",
+    "license": [
+        "proprietary"
+    ],
     "authors": [
         {
-            "email": "7pprince@gmail.com",
-            "name": "MagePrince"
+            "name": "Prince Patel",
+            "email": "mail.mageprince@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {},
     "autoload": {
         "files": [
             "registration.php"
