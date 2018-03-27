@@ -66,7 +66,7 @@ class MassDelete extends \Magento\Backend\App\Action
                 $itemsDeleted++;
             }
             $this->messageManager->addSuccess(__('A total of %1 Log(s) were deleted.', $itemsDeleted));
-        } catch(Exception $e) {
+        } catch(\Exception $e) {
             $this->messageManager->addError($e->getMessage());
         }
 
