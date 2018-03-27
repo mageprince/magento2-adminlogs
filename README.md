@@ -21,4 +21,4 @@ If you encounter any problems or bugs, please <a href="https://github.com/magepr
 
 # Screenshot
 
-<img src="https://image.ibb.co/dgUYRF/Admin_Logs_Magento_Admin.png" alt="Admin_Logs_Magento_Admin" border="0">
+<img src="https://github.com/mageprince/all-module-screenshots/blob/master/Adminlogs/Admin%20Logs%20%20%20Magento%20Admin.png?raw=true" alt="Admin_Logs_Magento_Admin" border="0">
