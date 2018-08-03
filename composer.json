@@ -1,28 +1,28 @@
 {
-    "name": "prince/module-adminlogs",
-    "description": "Magento2 Admin Logs",
-    "require": {
-        "magento/module-store": ">100.0",
-        "magento/module-backend": ">100.0",
-        "magento/framework": ">100.0"
-    },
-    "type": "magento2-module",
-    "version": "1.0.0",
-    "license": [
-        "proprietary"
-    ],
-    "authors": [
-        {
-            "name": "Prince Patel",
-            "email": "mail.mageprince@gmail.com"
-        }
-    ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Prince\\Adminlogs\\": ""
-        }
+  "name": "mageprince/module-adminlogs",
+  "description": "Magento 2 Admin Login History",
+  "require": {
+    "magento/module-store": ">100.0",
+    "magento/module-backend": ">100.0",
+    "magento/framework": ">100.0"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "proprietary"
+  ],
+  "authors": [
+    {
+      "name": "Prince Patel",
+      "email": "mail.mageprince@gmail.com"
     }
+  ],
+  "autoload": {
+    "files": [
+        "registration.php"
+    ],
+    "psr-4": {
+        "Prince\\Adminlogs\\": ""
+    }
+  }
 }
